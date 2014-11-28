@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/createnewaccount"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@+id/logo"
+                  android:layout_width="fill_parent"
+                  android:layout_height="200.0dip"
+                  android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="center"
+                  android:id="@+id/pan"
+                  android:layout_width="fill_parent"
+                  android:layout_height="50dp"
+                  android:layout_above="@+id/demourl"
+                  android:layout_below="@id/logo">
+        <RelativeLayout android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="20.0dip"
+                        android:layout_marginRight="20.0dip"
+                        xmlns:android="http://schemas.android.com/apk/res/android">
+            <EditText android:textSize="@dimen/login_text_size"
+                      android:id="@+id/email"
+                      android:textStyle="bold"
+                      android:textColor="@color/white"
+                      android:layout_width="fill_parent"
+                      android:hint="Email"
+                      android:background="@drawable/sltr_wht_edtx"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/login_btn_padding"
+                      android:ems="10"
+                      android:scrollHorizontally="true"
+                      android:singleLine="true"
+                      android:layout_marginBottom="25dip"
+                      android:layout_marginTop="10dip">
+                <requestFocus />
+            </EditText>
+            <Button android:textSize="@dimen/login_btn_text"
+                      android:textColor="@color/white"
+                      android:id="@+id/submiteaccount"
+                      android:textStyle="bold"
+                      android:text="Create a Fututel Account"
+                      android:background="@drawable/btn_dialvoip_action"
+                      android:typeface="serif"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/login_btn_padding"
+                      android:ems="10"
+                      android:scrollHorizontally="true"
+                      android:singleLine="true"
+                      android:layout_below="@id/email"
+                      android:layout_alignRight="@id/email"
+                      android:layout_marginTop="20dip"/>
+</RelativeLayout>
+    </LinearLayout>
+    <TextView android:textColor="@android:color/black" android:textColorLink="#153cff" android:autoLink="web" android:linksClickable="true" android:id="@+id/demourl" android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:text="www.speedycall.com"
+              android:visibility="invisible"/>
+</RelativeLayout>

@@ -1,0 +1,58 @@
+SipProfileState accountInfo = null;
+Cursor c = context.getContentResolver().query(ContentUris.withAppendedId(SipProfile.ACCOUNT_STATUS_ID_URI_BASE, accountId),		null, null, null, null);
+if (c != null) {
+    try {
+        if(c.getCount() > 0) {
+            c.moveToFirst();
+            accountInfo = new SipProfileState(c);
+        }
+    } catch (Exception e) {
+        Log.e(THIS_FILE, "Error on looping over sip profiles states", e);
+    } finally {
+        c.close();
+    }
+}
+
+
+if (accountInfo != null && accountInfo.isActive()) {
+        if (accountInfo.getAddedStatus() >= SipManager.SUCCESS) {
+
+
+            if( TextUtils.isEmpty( accountInfo.getRegUri()) ) {
+                //OKKKKKKKKKKKKKKKKKKKKK
+            }else if (accountInfo.isAddedToStack()) {
+                String pjStat = accountInfo.getStatusText();	// Used only on error status message
+                int statusCode = accountInfo.getStatusCode();
+                if (statusCode == SipCallSession.StatusCode.OK) {
+                    // Log.d(THIS_FILE,
+                    // "Now account "+account.display_name+" has expires "+accountInfo.getExpires());
+                    if (accountInfo.getExpires() > 0) {
+                        // OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+                    } else {
+                        // Unregistered
+                    }
+                } else if(statusCode != -1 ){
+                    if (statusCode == SipCallSession.StatusCode.PROGRESS || statusCode == SipCallSession.StatusCode.TRYING) {
+                        // Yellow progressing ...
+
+                    } else {
+                        //TODO : treat 403 with special message
+                        // Red : error
+
+                    }
+                }else {
+                    // Account is currently registering (added to pjsua but not replies yet from pjsua registration)
+
+                }
+            }
+        } else {
+            if(accountInfo.isAddedToStack()) {
+                //Failed
+            }else {
+                accountDisplay.statusColor = resources.getColor(R.color.account_inactive);
+                accountDisplay.checkBoxIndicator = R.drawable.ic_indicator_yellow;
+                accountDisplay.statusLabel = context.getString(R.string.acct_registering);
+
+            }
+        }
+    }

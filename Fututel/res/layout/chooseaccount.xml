@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_in_call_gradient_connected"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@+id/logo"
+                  android:layout_width="fill_parent"
+                  android:layout_height="200.0dip"
+                  android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="center"
+                  android:id="@+id/pan"
+                  android:layout_width="fill_parent"
+                  android:layout_height="50dp"
+                  android:layout_above="@+id/demourl"
+                  android:layout_below="@id/logo">
+        <RelativeLayout android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="20.0dip"
+                        android:layout_marginRight="20.0dip"
+                        xmlns:android="http://schemas.android.com/apk/res/android">
+            <Button android:textSize="@dimen/login_btn_text"
+                      android:id="@+id/createnewaccount"
+                      android:textStyle="bold"
+                      android:textColor="@color/white"
+                      android:layout_width="fill_parent"
+                      android:typeface="serif"
+                      android:text="Create a New Account"
+                      android:background="@drawable/btn_dialvoip_action"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/login_btn_padding"
+                      android:ems="10"
+                      android:scrollHorizontally="true"
+                      android:singleLine="true"
+                      android:layout_marginBottom="25dip"
+                      android:layout_marginTop="10dip">
+                <requestFocus />
+            </Button>
+            <Button android:textSize="@dimen/login_btn_text"
+                      android:textColor="@color/white"
+                      android:id="@+id/haveaccount"
+                      android:textStyle="bold"
+                      android:text="I already Have an Account"
+                      android:background="@drawable/btn_dialvoip_action"
+                      android:typeface="serif"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/login_btn_padding"
+                      android:ems="10"
+                      android:scrollHorizontally="true"
+                      android:singleLine="true"
+                      android:layout_below="@id/createnewaccount"
+                      android:layout_alignRight="@id/createnewaccount"
+                      android:layout_marginTop="20dip"/>
+</RelativeLayout>
+    </LinearLayout>
+    <TextView android:textColor="@android:color/black" android:textColorLink="#153cff" android:autoLink="web" android:linksClickable="true" android:id="@+id/demourl" android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:text="www.speedycall.com"
+              android:visibility="invisible"/>
+</RelativeLayout>

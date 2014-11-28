@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_text_size">14.0sp</dimen>
+    <dimen name="login_btn_text">17.0dip</dimen>
+    <dimen name="login_btn_padding">6.0dip</dimen>
+    <dimen name="dialer_digit_lvl0">12.0sp</dimen>
+    <dimen name="dialer_digit_lvl1">26.0sp</dimen>
+    <dimen name="dialer_digit_lvl2">25.0sp</dimen>
+    <dimen name="dialer_digit_lvl3">24.0sp</dimen>
+    <dimen name="dialer_digit_lvl4">22.0sp</dimen>
+</resources>

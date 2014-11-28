@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright (C) 2010 Regis Montoya (aka r3gis - www.r3gis.fr) 
+	Copyright (C) 2008 The Android Open Source Project
+	
+	This file is part of Fututel.
+    Fututel is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+	If you own a pjsip commercial license you can also redistribute it
+	and/or modify it under the terms of the GNU Lesser General Public License
+	as an android library.
+
+    Fututel is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Fututel.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<com.fututel.ui.dialpad.DialerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_digit_dialer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/right_panel_margin_vertical"
+    android:paddingTop="@dimen/right_panel_margin_vertical" >
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/top_tab_back"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:weightSum="10">
+        <ImageView android:id="@+id/status_img"
+                   android:layout_height="40.0dip"
+                   android:src="@drawable/inactive_img"
+                   android:layout_gravity="center"
+                   android:layout_margin="2dip"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"/>
+        <TextView
+                android:layout_height="fill_parent"
+                android:id="@+id/username"
+                android:textColor="@android:color/white"
+                android:textSize="19dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:paddingLeft="3dp"
+                android:layout_width="0dp"
+                android:layout_weight="5"/>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="60dp"
+                android:background="@drawable/top_tab_back"
+                android:gravity="right"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:weightSum="10"
+                android:layout_width="0dp"
+                android:layout_weight="4">
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/balance"
+                    android:layout_weight="5"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:text="Credit : 0"
+                    android:textStyle="bold"
+                    android:paddingRight="5dp"/>
+            <TextView
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/extension"
+                    android:layout_weight="5"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:text="Extension : "
+                    android:textStyle="bold"
+                    android:paddingRight="5dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/topField"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="0dip"
+        android:layout_weight="@integer/dialpad_layout_weight_digits"
+        android:background="@drawable/dialpad_background"
+        android:orientation="horizontal"
+        android:padding="0dip" >
+
+        <!-- Dummy item to prevent DigitsEditText from receiving focus -->
+
+        <View
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <com.fututel.ui.dialpad.DigitsEditText
+            android:id="@+id/digitsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/accountChooserButton"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/description_digits_edittext"
+            android:gravity="center"
+            android:imeActionLabel="@string/call"
+            android:imeOptions="actionGo"
+            android:nextFocusRight="@+id/accountChooserButton"
+            android:textAppearance="@style/DialtactsDigitsTextAppearance"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/rewriteTextInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/accountChooserButton"
+            android:gravity="center"
+            android:textColor="#88FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+        <com.fututel.widgets.AccountChooserButton
+            android:id="@+id/accountChooserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="80dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" />
+
+        <ImageButton
+            android:state_enabled="false"
+            android:layout_gravity="center"
+            android:id="@+id/deleteButton"
+            android:background="@drawable/btn_dial_right_corner"
+            android:layout_width="80.0dip"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_dial_action_delete"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/description_delete_button"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+    <!-- Autocomplete -->
+
+    <ListView
+        android:id="@+id/autoCompleteList"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="@integer/dialpad_layout_weight_autocomplete_list"
+        android:visibility="gone" />
+
+    <!-- Keypad section -->
+
+    <include layout="@layout/dialpad_compose" />
+
+</com.fututel.ui.dialpad.DialerLayout>
