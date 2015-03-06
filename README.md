@@ -26,7 +26,7 @@ Similar al que hizo Android - también propuestra de código abierto - en el cas
 Actualmente, nuestra compañera Diana está haciendo un trabajo de búsqueda de talentos - en Colombia y otros países hispanos - a través de distintos medios.
 
 *¿HAY ALGUNA VERSIÓN PUBLICADA?
-La versión publicada de esta app está en: https://play.google.com/store/apps/details?id=com.fututel. Aunque se presenta como una app con algunos propósitos comerciales de la empresa Fututel, cualquier otro está invitado a hacerle un fork y publicarla.
+La versión publicada de esta app está en: https://play.google.com/store/apps/details?id=com.fututel. Aunque se presenta como una app con algunos propósitos comerciales de la empresa Fututel, hace parte de un modelo que permita hacer este proyecto de open source uno que sea sostenible con el tiempo. Además, cualquier otro puede hacer lo mismo (esperando que también contribuya al proyecto como lo ha hecho Fututel).
 
 *¿QUÉ HAY DE LAS OTRAS PARTES QUE TAMBIÉN HACEN PARTE DEL SISTEMA CLIENTE-SERVIDOR?
 - Cliente: Actualmente sólo tenemos este repositorios Fututel-Android. No obstante, clientes en otras plataformas como iOS serían muy bienvenidos (quizás usted programe in iOS y no Android).
